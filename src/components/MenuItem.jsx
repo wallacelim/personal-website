@@ -4,17 +4,19 @@ import { motion } from "framer-motion";
 
 const variants = {
     open: {
+        x: 0,
         y: 0,
         opacity: 1,
         transition: {
-            y: { stiffness: 1000, velocity: -100 }
+            x: { stiffness: 1000, velocity: -100 }
         }
     },
     closed: {
-        y: 50,
+        x: -300,
+        y: 0,
         opacity: 0,
         transition: {
-            y: { stiffness: 1000 }
+            x: { stiffness: 1000 }
         }
     }
 };

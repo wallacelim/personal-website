@@ -3,7 +3,7 @@ import { useRef } from "react";
 import styled from "styled-components";
 import { motion, useCycle } from "framer-motion";
 import { useDimensions } from "./use-dimensions";
-import SideBarButton, { SidebarButton } from "./SideBarButton";
+import SideBarButton from "./SideBarButton";
 import { Navigation } from "./Navigation";
 
 const sidebar = {
@@ -18,7 +18,7 @@ const sidebar = {
     closed: {
         clipPath: "circle(30px at 40px 40px)",
         transition: {
-            delay: 0.5,
+            delay: 0.3,
             type: "spring",
             stiffness: 400,
             damping: 40
@@ -26,7 +26,7 @@ const sidebar = {
     }
 };
 
-export const SideBar = () => {
+export const SideBar = props => {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const containerRef = useRef(null);
     const { height } = useDimensions(containerRef);
@@ -38,7 +38,7 @@ export const SideBar = () => {
             custom={height}
             ref={containerRef}
         >
-            <Div className="background" variants={sidebar} />
+            <Div variants={sidebar} />
             <Navigation />
             <SideBarButton toggle={() => toggleOpen()} />
         </Nav>
@@ -59,5 +59,6 @@ const Div = styled(motion.div)`
     left: 0;
     bottom: 0;
     width: 300px;
+    border: 2px solid ${props => props.theme.HEADER_SECONDARY};
     background: ${props => props.theme.TEXT_PRIMARY};
 `;
