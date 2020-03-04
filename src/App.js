@@ -7,8 +7,7 @@ import { SideBar } from "./components/SideBar";
 import ViewToggle from "./components/ViewToggle";
 
 const App = viewMode => {
-    console.log(viewMode);
-    const view = {
+    const animateView = {
         background: viewMode.BACKGROUND_PRIMARY,
         color: viewMode.HEADER_PRIMARY,
         transition: {
@@ -20,7 +19,11 @@ const App = viewMode => {
     };
     return (
         <ThemeProvider theme={viewMode}>
-            <Div animate={view} transition={{ duration: 0.5 }} className="App">
+            <Div
+                animate={animateView}
+                transition={{ duration: 0.5 }}
+                className="App"
+            >
                 <ViewToggle />
                 <SideBar />
                 <Content>

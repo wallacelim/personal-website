@@ -7,7 +7,6 @@ import styled from "styled-components";
 const ViewToggle = ({ viewMode, toggleViewMode }) => {
     console.log(viewMode.DEFAULT_BORDER);
     const view = {
-        height: "auto",
         width: "fixed",
         background: viewMode.TEXT_PRIMARY,
         borderColor: viewMode.HEADER_SECONDARY,
