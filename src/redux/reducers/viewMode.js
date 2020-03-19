@@ -23,7 +23,6 @@ export const LIGHT_THEME = {
 };
 
 export default function(state = DARK_THEME, action) {
-    console.log("viewMode called");
     switch (action.type) {
         case TOGGLE_VIEW_MODE:
             return state === DARK_THEME ? LIGHT_THEME : DARK_THEME;

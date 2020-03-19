@@ -5,7 +5,6 @@ import { toggleViewMode } from "../redux/actions";
 import styled from "styled-components";
 
 const ViewToggle = ({ viewMode, toggleViewMode }) => {
-    console.log(viewMode.DEFAULT_BORDER);
     const view = {
         width: "fixed",
         background: viewMode.TEXT_PRIMARY,
