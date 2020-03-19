@@ -11,7 +11,10 @@ const ViewToggle = ({ viewMode, toggleViewMode }) => {
         background: viewMode.TEXT_PRIMARY,
         borderColor: viewMode.HEADER_SECONDARY,
         transition: {
-            duration: 0.7
+            delay: 0.3,
+            type: "spring",
+            stiffness: 400,
+            damping: 40
         }
     };
 

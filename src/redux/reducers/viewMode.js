@@ -1,6 +1,6 @@
 import { TOGGLE_VIEW_MODE } from "../actionTypes";
 
-const DARK_THEME = {
+export const DARK_THEME = {
     TYPE: "DARK",
     BACKGROUND_PRIMARY: "#282a36",
     BACKGROUND_SECONDARY: "#44475a",
@@ -11,7 +11,7 @@ const DARK_THEME = {
     DEFAULT_BORDER: "2px solid #f1fa8c"
 };
 
-const LIGHT_THEME = {
+export const LIGHT_THEME = {
     TYPE: "LIGHT",
     BACKGROUND_PRIMARY: "#FFFFFF",
     BACKGROUND_SECONDARY: "#E2E8F0",
