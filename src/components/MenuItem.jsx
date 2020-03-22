@@ -1,4 +1,5 @@
 import React from "react";
+import { connect } from "react-redux";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
@@ -8,22 +9,22 @@ const variants = {
         y: 0,
         opacity: 1,
         transition: {
-            x: { stiffness: 1000, velocity: -100 }
-        }
+            x: { stiffness: 1000, velocity: -100 },
+        },
     },
     closed: {
         x: -300,
         y: 0,
         opacity: 0,
         transition: {
-            x: { stiffness: 1000 }
-        }
-    }
+            x: { stiffness: 1000 },
+        },
+    },
 };
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
-export const MenuItem = ({ i }) => {
+const MenuItem = ({ i }) => {
     const style = { border: `2px solid ${colors[i]}` };
     return (
         <ListItem
@@ -32,10 +33,16 @@ export const MenuItem = ({ i }) => {
             whileTap={{ scale: 0.95 }}
         >
             <IconPlaceholder style={style} />
-            <TextPlaceholder style={style} />
+            <TextPlaceholder style={style}>Some Random Text</TextPlaceholder>
         </ListItem>
     );
 };
+
+const mapStateToProps = ({ viewMode }) => ({
+    viewMode,
+});
+
+export default connect(mapStateToProps, null)(MenuItem);
 
 const ListItem = styled(motion.li)`
     margin: 0 0 20px 0;
@@ -56,6 +63,8 @@ const IconPlaceholder = styled.div`
 
 const TextPlaceholder = styled.div`
     border-radius: 5px;
+    color: ${(props) => props.theme.TEXT_NEGATIVE};
+    font-size: 16px;
     width: 200px;
     height: 20px;
     flex: 1;

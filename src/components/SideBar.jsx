@@ -1,23 +1,23 @@
-import * as React from "react";
-import { useRef } from "react";
+import React, { useRef } from "react";
+
 import { connect } from "react-redux";
 import styled from "styled-components";
 import { motion, useCycle } from "framer-motion";
 import SideBarButton from "./SideBarButton";
-import { Navigation } from "./Navigation";
+import Menu from "./Menu";
 
 const SideBar = ({ viewMode }) => {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const open = {
         background: viewMode.TEXT_PRIMARY,
         borderColor: viewMode.HEADER_SECONDARY,
-        clipPath: `circle(101vh at 40px 40px)`,
+        clipPath: "circle(101vh at 40px 40px)",
         transition: {
             delay: 0.3,
             type: "spring",
             stiffness: 400,
-            damping: 40
-        }
+            damping: 40,
+        },
     };
     const closed = {
         background: viewMode.TEXT_PRIMARY,
@@ -27,8 +27,8 @@ const SideBar = ({ viewMode }) => {
             delay: 0.3,
             type: "spring",
             stiffness: 400,
-            damping: 40
-        }
+            damping: 40,
+        },
     };
 
     const containerRef = useRef(null);
@@ -40,14 +40,14 @@ const SideBar = ({ viewMode }) => {
             ref={containerRef}
         >
             <Div animate={isOpen ? open : closed} />
-            <Navigation />
+            <Menu />
             <SideBarButton toggle={() => toggleOpen()} />
         </Nav>
     );
 };
 
 const mapStateToProps = ({ viewMode }) => ({
-    viewMode
+    viewMode,
 });
 
 export default connect(mapStateToProps, null)(SideBar);
@@ -67,6 +67,6 @@ const Div = styled(motion.div)`
     bottom: 0;
     width: 300px;
     border: 2px solid;
-    /* background: ${props => props.theme.TEXT_PRIMARY};
-    border: ${props => props.theme.DEFAULT_BORDER}; */
+    /* background: ${(props) => props.theme.TEXT_PRIMARY};
+    border: ${(props) => props.theme.DEFAULT_BORDER}; */
 `;

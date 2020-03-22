@@ -1,7 +1,9 @@
-import { TOGGLE_VIEW_MODE } from "./actionTypes";
+import { TOGGLE_VIEW_MODE, ADD_POST } from "./actionTypes";
 
-export const toggleViewMode = () => {
-    return {
-        type: TOGGLE_VIEW_MODE
-    };
-};
+export const toggleViewMode = () => ({
+    type: TOGGLE_VIEW_MODE,
+});
+
+export const addPost = () => ({
+    type: ADD_POST,
+});

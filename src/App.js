@@ -6,7 +6,7 @@ import "./App.css";
 import SideBar from "./components/SideBar";
 import ViewToggle from "./components/ViewToggle";
 
-const App = viewMode => {
+const App = (viewMode) => {
     const [text, setText] = useState("");
     const [debounceWait, setDebounceWait] = useState(800);
 
@@ -17,8 +17,8 @@ const App = viewMode => {
             delay: 0.1,
             type: "spring",
             stiffness: 400,
-            damping: 40
-        }
+            damping: 40,
+        },
     };
 
     function debounce(func, wait) {
@@ -56,15 +56,14 @@ const App = viewMode => {
                         <h5>Debounced Function practice - Mar 16 2020</h5>
                         <p>Whatever is typed into here</p>
                         <Input
-                            placeholder={"Input text"}
-                            onChange={e => debouncedSetText(e.target.value)}
+                            placeholder="Input text"
+                            onChange={(e) => debouncedSetText(e.target.value)}
                         />
                         <p>will be echoed after</p>
                         <Input
-                            placeholder={"(Default=800)"}
+                            placeholder="(Default=800)"
                             type="number"
-                            onChange={e =>
-                                setDebounceWait(parseInt(e.target.value))
+                            onChange={(e) => setDebounceWait(parseInt(e.target.value, 10))
                             }
                         />
                         <p>miliseconds</p>
@@ -79,7 +78,7 @@ const App = viewMode => {
     );
 };
 
-const mapStateToProps = state => state.viewMode;
+const mapStateToProps = (state) => state.viewMode;
 
 export default connect(mapStateToProps, null)(App);
 
@@ -105,21 +104,9 @@ const Content = styled(motion.div)`
 const Input = styled(motion.input)`
     width: 300px;
     height: 20px;
-    border: ${props => props.theme.DEFAULT_BORDER};
+    border: ${(props) => props.theme.DEFAULT_BORDER};
     &:focus {
         outline: none;
     }
     padding: 5px;
-`;
-
-const Button = styled(motion.button)`
-    font-size: 16px;
-    color: ${props => props.theme.HEADER_PRIMARY};
-    background: ${props => props.theme.BACKGROUND_SECONDARY};
-    border: ${props => props.theme.DEFAULT_BORDER};
-    font-family: Fira Code;
-    border-radius: 10px 10px;
-    &:focus {
-        outline: none;
-    }
 `;

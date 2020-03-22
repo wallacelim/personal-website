@@ -8,7 +8,8 @@ export const DARK_THEME = {
     HEADER_SECONDARY: "#f1fa8c",
     TEXT_PRIMARY: "#f8f8f2",
     TEXT_SECONDARY: "#ff79c6",
-    DEFAULT_BORDER: "2px solid #f1fa8c"
+    TEXT_NEGATIVE: "#718096",
+    DEFAULT_BORDER: "2px solid #f1fa8c",
 };
 
 export const LIGHT_THEME = {
@@ -19,14 +20,15 @@ export const LIGHT_THEME = {
     HEADER_SECONDARY: "#2D3748",
     TEXT_PRIMARY: "#718096",
     TEXT_SECONDARY: "#A0AEC0",
-    DEFAULT_BORDER: "2px solid #2D3748"
+    TEXT_NEGATIVE: "#f8f8f2",
+    DEFAULT_BORDER: "2px solid #2D3748",
 };
 
-export default function(state = DARK_THEME, action) {
+export default function (state = DARK_THEME, action) {
     switch (action.type) {
-        case TOGGLE_VIEW_MODE:
-            return state === DARK_THEME ? LIGHT_THEME : DARK_THEME;
-        default:
-            return state;
+    case TOGGLE_VIEW_MODE:
+        return state === DARK_THEME ? LIGHT_THEME : DARK_THEME;
+    default:
+        return state;
     }
 }
