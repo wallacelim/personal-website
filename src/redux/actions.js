@@ -1,7 +1,7 @@
-import { TOGGLE_VIEW_MODE, ADD_POST } from "./actionTypes";
+import { TOGGLE_THEME, ADD_POST } from "./actionTypes";
 
 export const toggleViewMode = () => ({
-    type: TOGGLE_VIEW_MODE,
+    type: TOGGLE_THEME,
 });
 
 export const addPost = () => ({

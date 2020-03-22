@@ -38,14 +38,14 @@ const MenuItem = ({ i }) => {
     );
 };
 
-const mapStateToProps = ({ viewMode }) => ({
-    viewMode,
+const mapStateToProps = ({ theme }) => ({
+    theme,
 });
 
 export default connect(mapStateToProps, null)(MenuItem);
 
 const ListItem = styled(motion.li)`
-    margin: 0 0 20px 0;
+    margin: 0 0 1.25rem 0;
     padding: 0;
     list-style: none;
     display: flex;
@@ -54,18 +54,18 @@ const ListItem = styled(motion.li)`
 `;
 
 const IconPlaceholder = styled.div`
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     border-radius: 50%;
-    flex: 40px 0;
-    margin-right: 20px;
+    flex: 2.5rem 0;
+    margin-right: 1.25rem;
 `;
 
 const TextPlaceholder = styled.div`
     border-radius: 5px;
-    color: ${(props) => props.theme.TEXT_NEGATIVE};
-    font-size: 16px;
-    width: 200px;
-    height: 20px;
+    color: ${(props) => props.theme.NEGATIVE};
+    font-size: 1rem;
+    width: 12.5rem;
+    height: 1.25rem;
     flex: 1;
 `;

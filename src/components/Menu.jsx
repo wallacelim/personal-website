@@ -25,8 +25,8 @@ export default () => (
 
 const UnorderedList = styled(motion.ul)`
     margin: 0;
-    padding: 25px;
+    padding: 1.5rem;
     position: absolute;
-    top: 100px;
-    width: 230px;
+    top: 6rem;
+    width: 15rem;
 `;

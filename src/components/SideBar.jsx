@@ -6,12 +6,12 @@ import { motion, useCycle } from "framer-motion";
 import SideBarButton from "./SideBarButton";
 import Menu from "./Menu";
 
-const SideBar = ({ viewMode }) => {
+const SideBar = ({ theme }) => {
     const [isOpen, toggleOpen] = useCycle(false, true);
     const open = {
-        background: viewMode.TEXT_PRIMARY,
-        borderColor: viewMode.HEADER_SECONDARY,
-        clipPath: "circle(101vh at 40px 40px)",
+        background: theme.MAIN,
+        border: theme.DEFAULT_BORDER,
+        clipPath: "circle(101vh at 2.5rem 2.5rem)",
         transition: {
             delay: 0.3,
             type: "spring",
@@ -20,9 +20,9 @@ const SideBar = ({ viewMode }) => {
         },
     };
     const closed = {
-        background: viewMode.TEXT_PRIMARY,
-        borderColor: viewMode.HEADER_SECONDARY,
-        clipPath: "circle(30px at 40px 40px)",
+        background: theme.MAIN,
+        borderColor: theme.SECONDARY,
+        clipPath: "circle(2rem at 2.5rem 2.5rem)",
         transition: {
             delay: 0.3,
             type: "spring",
@@ -46,8 +46,8 @@ const SideBar = ({ viewMode }) => {
     );
 };
 
-const mapStateToProps = ({ viewMode }) => ({
-    viewMode,
+const mapStateToProps = ({ theme }) => ({
+    theme,
 });
 
 export default connect(mapStateToProps, null)(SideBar);
@@ -57,7 +57,7 @@ const Nav = styled(motion.nav)`
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
+    width: 20rem;
 `;
 
 const Div = styled(motion.div)`
@@ -65,8 +65,6 @@ const Div = styled(motion.div)`
     top: 0;
     left: 0;
     bottom: 0;
-    width: 300px;
-    border: 2px solid;
-    /* background: ${(props) => props.theme.TEXT_PRIMARY};
-    border: ${(props) => props.theme.DEFAULT_BORDER}; */
+    width: 20rem;
+    border: 0.125rem solid;
 `;

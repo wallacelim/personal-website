@@ -5,14 +5,17 @@ import { motion } from "framer-motion";
 import "./App.css";
 import SideBar from "./components/SideBar";
 import ViewToggle from "./components/ViewToggle";
+import {
+    Text, HeaderPrimary, HeaderSecondary, HeaderTertiary,
+} from "./constants/fonts";
 
-const App = (viewMode) => {
+const App = (theme) => {
     const [text, setText] = useState("");
     const [debounceWait, setDebounceWait] = useState(800);
 
     const animateView = {
-        background: viewMode.BACKGROUND_PRIMARY,
-        color: viewMode.HEADER_PRIMARY,
+        background: theme.BACKGROUND_PRIMARY,
+        color: theme.PRIMARY,
         transition: {
             delay: 0.1,
             type: "spring",
@@ -34,7 +37,7 @@ const App = (viewMode) => {
     const debouncedSetText = debounce(setText, debounceWait);
 
     return (
-        <ThemeProvider theme={viewMode}>
+        <ThemeProvider theme={theme}>
             <Div
                 animate={animateView}
                 transition={{ duration: 0.5 }}
@@ -43,32 +46,32 @@ const App = (viewMode) => {
                 <ViewToggle />
                 <SideBar />
                 <Content>
-                    <h3>Welcome to my personal website</h3>
-                    <p>
-                        Apparently, this website is still under construction. In
-                        due time, I hope for this to be a repository of my
-                        ventures into software engineering, or even life in
+                    <HeaderPrimary>Welcome to my personal website</HeaderPrimary>
+                    <Text>
+                        This website is still under construction.
+                        I hope for this to be a repository of my
+                        ventures into software engineering, as well as life in
                         general!
-                    </p>
-                    <p> Just dumping everything here for now:</p>
+                    </Text>
+                    <HeaderTertiary> Just dumping everything here for now:</HeaderTertiary>
                     <hr />
-                    <div style={{ color: viewMode.TEXT_SECONDARY }}>
-                        <h5>Debounced Function practice - Mar 16 2020</h5>
-                        <p>Whatever is typed into here</p>
+                    <div >
+                        <HeaderSecondary>Debounced Function practice - Mar 16 2020</HeaderSecondary>
+                        <Text>Whatever is typed into here</Text>
                         <Input
                             placeholder="Input text"
                             onChange={(e) => debouncedSetText(e.target.value)}
                         />
-                        <p>will be echoed after</p>
+                        <Text>will be echoed after</Text>
                         <Input
                             placeholder="(Default=800)"
                             type="number"
                             onChange={(e) => setDebounceWait(parseInt(e.target.value, 10))
                             }
                         />
-                        <p>miliseconds</p>
-                        <div style={{ color: viewMode.HEADER_SECONDARY }}>
-                            <h3>{text}</h3>
+                        <Text>miliseconds</Text>
+                        <div style={{ color: theme.SECONDARY }}>
+                            <HeaderTertiary>{text}</HeaderTertiary>
                         </div>
                     </div>
                     <hr />
@@ -78,7 +81,7 @@ const App = (viewMode) => {
     );
 };
 
-const mapStateToProps = (state) => state.viewMode;
+const mapStateToProps = (state) => state.theme;
 
 export default connect(mapStateToProps, null)(App);
 
@@ -102,11 +105,11 @@ const Content = styled(motion.div)`
 `;
 
 const Input = styled(motion.input)`
-    width: 300px;
-    height: 20px;
+    width: 20rem;
+    height: 1.25rem;
     border: ${(props) => props.theme.DEFAULT_BORDER};
     &:focus {
         outline: none;
     }
-    padding: 5px;
+    padding: 0.25rem;
 `;

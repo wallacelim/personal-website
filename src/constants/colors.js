@@ -1,0 +1,13 @@
+export const BLACK = "#000000";
+export const DARKER_GREY = "#2D3748";
+export const DARKEST_GREY = "#282a36";
+export const SKY_BLUE = "#8be9fd";
+export const DARK_BLUE = "#333399";
+export const PINK = "#ff79c6";
+export const STEEL_GREY = "#718096";
+export const CREAM = "#f8f8f2";
+export const YELLOW = "#f1fa8c";
+export const LIGHT_BLUE = "#E2E8F0";
+export const WHITE = "#FFFFFF";
+export const DARK_GREY = "#44475a";
+export const SEA_GREEN = "#00b38f";

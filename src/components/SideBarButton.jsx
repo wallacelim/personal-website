@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-
 export default ({ toggle }) => (
     <Button onClick={toggle}>
         <svg width="23" height="23" viewBox="0 0 23 23">
@@ -30,13 +29,16 @@ export default ({ toggle }) => (
     </Button>
 );
 
-const Path = ({ variants }) => (
+
+const Path = ({ variants, d, transition }) => (
     <motion.path
         fill="transparent"
         strokeWidth="3"
         stroke="hsl(0, 0%, 18%)"
         strokeLinecap="round"
-        variants = {variants}
+        variants={variants}
+        d={d}
+        transition={transition}
     />
 );
 
@@ -48,10 +50,10 @@ const Button = styled.button`
     -ms-user-select: none;
     cursor: pointer;
     position: absolute;
-    top: 18px;
-    left: 15px;
-    width: 50px;
-    height: 50px;
+    top: 1.25rem;
+    left: 1rem;
+    width: 3rem;
+    height: 3rem;
     border-radius: 50%;
     background: transparent;
 `;
