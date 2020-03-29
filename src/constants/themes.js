@@ -1,7 +1,8 @@
 import {
     SKY_BLUE,
     LIGHT_BLUE,
-    PINK, CREAM,
+    PINK,
+    CREAM,
     YELLOW,
     STEEL_GREY,
     BLACK,
@@ -9,9 +10,8 @@ import {
     DARK_GREY,
     SEA_GREEN,
     WHITE,
-    DARKEST_GREY,
+    DARKEST_GREY
 } from "./colors";
-
 
 export const DARK_THEME = {
     TYPE: "DARK",
@@ -22,7 +22,7 @@ export const DARK_THEME = {
     SECONDARY: PINK,
     TERTIARY: YELLOW,
     MAIN: CREAM,
-    NEGATIVE: STEEL_GREY,
+    NEGATIVE: STEEL_GREY
 };
 
 export const LIGHT_THEME = {
@@ -30,9 +30,9 @@ export const LIGHT_THEME = {
     BACKGROUND_PRIMARY: WHITE,
     BACKGROUND_SECONDARY: LIGHT_BLUE,
     DEFAULT_BORDER: "2px solid #2D3748",
-    PRIMARY: BLACK,
+    PRIMARY: SEA_GREEN,
     SECONDARY: DARK_GREY,
-    TERTIARY: SEA_GREEN,
+    TERTIARY: BLACK,
     MAIN: STEEL_GREY,
-    NEGATIVE: CREAM,
+    NEGATIVE: CREAM
 };

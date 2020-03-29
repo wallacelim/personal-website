@@ -9,17 +9,17 @@ const variants = {
         y: 0,
         opacity: 1,
         transition: {
-            x: { stiffness: 1000, velocity: -100 },
-        },
+            x: { stiffness: 1000, velocity: -100 }
+        }
     },
     closed: {
         x: -300,
         y: 0,
         opacity: 0,
         transition: {
-            x: { stiffness: 1000 },
-        },
-    },
+            x: { stiffness: 1000 }
+        }
+    }
 };
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
@@ -39,7 +39,7 @@ const MenuItem = ({ i }) => {
 };
 
 const mapStateToProps = ({ theme }) => ({
-    theme,
+    theme
 });
 
 export default connect(mapStateToProps, null)(MenuItem);
@@ -63,7 +63,7 @@ const IconPlaceholder = styled.div`
 
 const TextPlaceholder = styled.div`
     border-radius: 5px;
-    color: ${(props) => props.theme.NEGATIVE};
+    color: ${props => props.theme.NEGATIVE};
     font-size: 1rem;
     width: 12.5rem;
     height: 1.25rem;

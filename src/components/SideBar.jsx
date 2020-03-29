@@ -16,19 +16,18 @@ const SideBar = ({ theme }) => {
             delay: 0.3,
             type: "spring",
             stiffness: 400,
-            damping: 40,
-        },
+            damping: 40
+        }
     };
     const closed = {
         background: theme.MAIN,
-        borderColor: theme.SECONDARY,
         clipPath: "circle(2rem at 2.5rem 2.5rem)",
         transition: {
             delay: 0.3,
             type: "spring",
             stiffness: 400,
-            damping: 40,
-        },
+            damping: 40
+        }
     };
 
     const containerRef = useRef(null);
@@ -47,7 +46,7 @@ const SideBar = ({ theme }) => {
 };
 
 const mapStateToProps = ({ theme }) => ({
-    theme,
+    theme
 });
 
 export default connect(mapStateToProps, null)(SideBar);
@@ -58,6 +57,7 @@ const Nav = styled(motion.nav)`
     left: 0;
     bottom: 0;
     width: 20rem;
+    z-index: 1;
 `;
 
 const Div = styled(motion.div)`
@@ -66,5 +66,4 @@ const Div = styled(motion.div)`
     left: 0;
     bottom: 0;
     width: 20rem;
-    border: 0.125rem solid;
 `;
