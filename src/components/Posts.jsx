@@ -6,10 +6,11 @@ import Editor from "react-simple-code-editor";
 import { highlight, languages } from "prismjs/components/prism-core";
 import "prismjs/components/prism-clike";
 import "prismjs/components/prism-javascript";
+import "../prism.css";
 import { Text, HeaderSecondary, HeaderTertiary } from "../constants/fonts";
 import PostSeperator from "./PostSeperator";
 
-const Posts = theme => {
+const Posts = (theme) => {
     const [text, setText] = useState("");
     const [exmapleThunkCode, setExampleThunkCode] = useState(`
     function wrapper() {
@@ -65,15 +66,16 @@ const Posts = theme => {
 
             <CodeEditor
                 value={exmapleThunkCode}
-                onValueChange={exmapleThunkCode =>
+                onValueChange={(exmapleThunkCode) =>
                     setExampleThunkCode(exmapleThunkCode)
                 }
-                highlight={exmapleThunkCode =>
+                highlight={(exmapleThunkCode) =>
                     highlight(exmapleThunkCode, languages.js)
                 }
                 tabSize={4}
                 padding={10}
             />
+
             <HeaderTertiary>Why use redux-thunk?</HeaderTertiary>
             <Text>
                 Since reducers are pure functions by convention, dispatching API
@@ -87,8 +89,8 @@ const Posts = theme => {
             </Text>
             <CodeEditor
                 value={reduxThunkCode}
-                onValueChange={reduxThunkCode => reduxThunkCode}
-                highlight={reduxThunkCode =>
+                onValueChange={(reduxThunkCode) => reduxThunkCode}
+                highlight={(reduxThunkCode) =>
                     highlight(reduxThunkCode, languages.js)
                 }
                 tabSize={4}
@@ -104,13 +106,13 @@ const Posts = theme => {
             <Text>Whatever is typed into here</Text>
             <Input
                 placeholder="Input text"
-                onChange={e => debouncedSetText(e.target.value)}
+                onChange={(e) => debouncedSetText(e.target.value)}
             />
             <Text>will be echoed after</Text>
             <Input
                 placeholder="(Default=800)"
                 type="number"
-                onChange={e => setDebounceWait(parseInt(e.target.value, 10))}
+                onChange={(e) => setDebounceWait(parseInt(e.target.value, 10))}
             />
             <Text>miliseconds</Text>
             <div style={{ color: theme.SECONDARY }}>
@@ -121,14 +123,14 @@ const Posts = theme => {
     );
 };
 
-const mapStateToProps = state => state.theme;
+const mapStateToProps = (state) => state.theme;
 
 export default connect(mapStateToProps, null)(Posts);
 
 const Input = styled(motion.input)`
     width: 20rem;
     height: 1.25rem;
-    border: ${props => props.theme.DEFAULT_BORDER};
+    border: ${(props) => props.theme.DEFAULT_BORDER};
     &:focus {
         outline: none;
     }
@@ -138,7 +140,7 @@ const Input = styled(motion.input)`
 const CodeEditor = styled(Editor)`
     font-family: Fira Code, Fira Mono, monospace;
     font-size: 16;
-    background: ${props => props.theme.BACKGROUND_SECONDARY};
+    background: ${(props) => props.theme.BACKGROUND_SECONDARY};
     border-radius: 20px;
     z-index: 0;
 `;
