@@ -9,7 +9,7 @@ import { Text, HeaderPrimary } from "./constants/fonts";
 import Posts from "./components/Posts";
 import PostSeperator from "./components/PostSeperator";
 
-const App = theme => {
+const App = (theme) => {
     const animateView = {
         background: theme.BACKGROUND_PRIMARY,
         color: theme.PRIMARY,
@@ -17,8 +17,8 @@ const App = theme => {
             delay: 0.1,
             type: "spring",
             stiffness: 400,
-            damping: 40
-        }
+            damping: 40,
+        },
     };
 
     return (
@@ -50,7 +50,7 @@ const App = theme => {
     );
 };
 
-const mapStateToProps = state => state.theme;
+const mapStateToProps = (state) => state.theme;
 
 export default connect(mapStateToProps, null)(App);
 
@@ -62,6 +62,7 @@ const Div = styled(motion.div)`
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    line-height: 2;
 `;
 
 const Content = styled(motion.div)`

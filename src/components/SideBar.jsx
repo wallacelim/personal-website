@@ -16,8 +16,8 @@ const SideBar = ({ theme }) => {
             delay: 0.3,
             type: "spring",
             stiffness: 400,
-            damping: 40
-        }
+            damping: 40,
+        },
     };
     const closed = {
         background: theme.MAIN,
@@ -26,8 +26,8 @@ const SideBar = ({ theme }) => {
             delay: 0.3,
             type: "spring",
             stiffness: 400,
-            damping: 40
-        }
+            damping: 40,
+        },
     };
 
     const containerRef = useRef(null);
@@ -46,7 +46,7 @@ const SideBar = ({ theme }) => {
 };
 
 const mapStateToProps = ({ theme }) => ({
-    theme
+    theme,
 });
 
 export default connect(mapStateToProps, null)(SideBar);
