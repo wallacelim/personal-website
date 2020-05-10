@@ -19,7 +19,7 @@ const Posts = () => (
         <PostSeperator />
     </Div>
 );
-const mapStateToProps = (state) => state.theme;
+const mapStateToProps = ({ theme }) => theme;
 
 export default connect(mapStateToProps, null)(Posts);
 

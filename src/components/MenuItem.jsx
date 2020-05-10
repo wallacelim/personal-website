@@ -24,16 +24,17 @@ const variants = {
 
 const colors = ["#FF008C", "#D309E1", "#9C1AFF", "#7700FF", "#4400FF"];
 
-const MenuItem = ({ i }) => {
-    const style = { border: `2px solid ${colors[i]}` };
+const MenuItem = ({ idx, item: { displayText } }) => {
+    const style = { border: `2px solid ${colors[idx]}` };
     return (
         <ListItem
             variants={variants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
+            onClick={() => alert("clicked")} // TODO: remove stub
         >
             <IconPlaceholder style={style} />
-            <TextPlaceholder style={style}>Some Random Text</TextPlaceholder>
+            <TextPlaceholder style={style}>{displayText}</TextPlaceholder>
         </ListItem>
     );
 };
@@ -63,6 +64,7 @@ const IconPlaceholder = styled.div`
 
 const TextPlaceholder = styled.div`
     border-radius: 5px;
+    padding-bottom: 10px;
     color: ${(props) => props.theme.NEGATIVE};
     font-size: 1rem;
     width: 12.5rem;

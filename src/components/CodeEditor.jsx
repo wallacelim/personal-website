@@ -17,15 +17,12 @@ export default ({ code }) => (
 
 const aceEditorStyles = {
     width: "100%",
-    "border-radius": "20px",
+    borderRadius: "20px",
     zIndex: 0,
     fontSize: "16px",
 };
 
 const aceEditorOptions = {
-    enableBasicAutocompletion: false,
-    enableLiveAutocompletion: false,
-    enableSnippets: false,
     showLineNumbers: true,
     tabSize: 4,
 };

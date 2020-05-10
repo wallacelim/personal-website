@@ -12,12 +12,33 @@ const variants = {
     },
 };
 
-const itemIds = [0, 1, 2, 3, 4]; // TODO: remove this stub
+const items = [
+    {
+        displayText: "BLOG",
+        tooltip: "Day to day musings",
+    },
+    {
+        displayText: "PORTFOLIO",
+        tooltip: "Things I've worked on",
+    },
+    {
+        displayText: "LEARNING PATH",
+        tooltip: "Things I have learnt or am learning",
+    },
+    {
+        displayText: "GITHUB",
+        tooltip: "My only social(?) media",
+    },
+    {
+        displayText: "RESUME",
+        tooltip: "Click to download",
+    },
+]; // TODO: replace this stub
 
 export default () => (
     <UnorderedList variants={variants}>
-        {itemIds.map((i) => (
-            <MenuItem i={i} key={i} />
+        {items.map((item, idx) => (
+            <MenuItem idx={idx} key={item.displayText} item={item} />
         ))}
     </UnorderedList>
 );

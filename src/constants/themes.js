@@ -22,7 +22,7 @@ export const DARK_THEME = {
     SECONDARY: PINK,
     TERTIARY: YELLOW,
     MAIN: CREAM,
-    NEGATIVE: STEEL_GREY,
+    NEGATIVE: BLACK,
 };
 
 export const LIGHT_THEME = {
