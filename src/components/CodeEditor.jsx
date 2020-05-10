@@ -3,19 +3,17 @@ import AceEditor from "react-ace";
 import "ace-builds/src-noconflict/mode-javascript";
 import "ace-builds/src-noconflict/theme-monokai";
 
-export default ({ code }) => {
-    return (
-        <AceEditor
-            value={code}
-            highlightActiveLine={true}
-            mode="javascript"
-            theme="monokai"
-            setOptions={aceEditorOptions}
-            style={aceEditorStyles}
-            maxLines={Infinity}
-        />
-    );
-};
+export default ({ code }) => (
+    <AceEditor
+        value={code}
+        highlightActiveLine
+        mode="javascript"
+        theme="monokai"
+        setOptions={aceEditorOptions}
+        style={aceEditorStyles}
+        maxLines={Infinity}
+    />
+);
 
 const aceEditorStyles = {
     width: "100%",

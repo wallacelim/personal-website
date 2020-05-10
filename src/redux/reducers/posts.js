@@ -72,30 +72,31 @@ const initialState = {
             segments: [
                 {
                     type: CONTENT_TYPE.TEXT,
-                    content: `Whatever is typed into here`,
+                    content: "Whatever is typed into here",
                 },
                 {
                     type: CONTENT_TYPE.INPUT,
-                    content: `Input text`,
-                    onChange: `{(e) => debouncedSetText(e.target.value)}`,
+                    content: "Input text",
+                    onChange: "{(e) => debouncedSetText(e.target.value)}",
                 },
                 {
                     type: CONTENT_TYPE.TEXT,
-                    content: `will be echoed after`,
+                    content: "will be echoed after",
                 },
                 {
                     type: CONTENT_TYPE.INPUT,
-                    content: `Input text`,
-                    onChange: `{(e) => setDebounceWait(parseInt(e.target.value, 10))}`,
+                    content: "Input text",
+                    onChange:
+                        "{(e) => setDebounceWait(parseInt(e.target.value, 10))}",
                 },
                 {
                     type: CONTENT_TYPE.TEXT,
-                    content: `miliseconds`,
+                    content: "miliseconds",
                 },
                 {
                     type: CONTENT_TYPE.HEADER_TERTIARY,
-                    content: `{text}`,
-                    style: `{{color: theme.SECONDARY}}`,
+                    content: "{text}",
+                    style: "{{color: theme.SECONDARY}}",
                 },
             ],
             author: "5e667f9e46ef5c862de56b6b",

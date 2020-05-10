@@ -10,7 +10,7 @@ import {
     DARK_GREY,
     SEA_GREEN,
     WHITE,
-    DARKEST_GREY
+    DARKEST_GREY,
 } from "./colors";
 
 export const DARK_THEME = {
@@ -22,7 +22,7 @@ export const DARK_THEME = {
     SECONDARY: PINK,
     TERTIARY: YELLOW,
     MAIN: CREAM,
-    NEGATIVE: STEEL_GREY
+    NEGATIVE: STEEL_GREY,
 };
 
 export const LIGHT_THEME = {
@@ -34,5 +34,5 @@ export const LIGHT_THEME = {
     SECONDARY: DARK_GREY,
     TERTIARY: BLACK,
     MAIN: STEEL_GREY,
-    NEGATIVE: CREAM
+    NEGATIVE: CREAM,
 };

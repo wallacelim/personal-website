@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-filename-extension */
 import React from "react";
 import { connect } from "react-redux";
 import styled, { ThemeProvider } from "styled-components";
