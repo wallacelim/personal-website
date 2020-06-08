@@ -31,7 +31,7 @@ const MenuItem = ({ idx, item: { displayText } }) => {
             variants={variants}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
-            onClick={() => alert("clicked")} // TODO: remove stub
+            onClick={() => alert("Still under construction. My apologies!")} // TODO: remove stub
         >
             <IconPlaceholder style={style} />
             <TextPlaceholder style={style}>{displayText}</TextPlaceholder>

@@ -8,8 +8,6 @@ import _300320 from "../posts/2020-03-30";
 import _160320 from "../posts/2020-03-16";
 
 const Posts = () => (
-    // Post 2
-
     <Div>
         <_100420 />
         <PostSeperator />

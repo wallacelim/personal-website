@@ -18,13 +18,14 @@ export default () => (
         <HeaderTertiary>Why use redux-thunk?</HeaderTertiary>
         <Text>
             Since reducers are pure functions by convention, dispatching API
-            calls / actions should not be accomplished within them. As such, we
+            calls/actions should not be accomplished within them. As such, we
             can use the redux-thunk middleware to perform these actions.
         </Text>
         <HeaderTertiary>How does redux-thunk work?</HeaderTertiary>
         <Text>
             It is a middleware which calls functions which are passed in as
-            actions. It's implementation is short and sweet:
+            actions. Essentially, it allows us to dispatch functions as actions.
+            It's implementation is short and sweet:
         </Text>
         <CodeEditor code={REDUX_THUNK_CODE} />
     </>

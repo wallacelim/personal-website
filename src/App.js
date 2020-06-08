@@ -31,7 +31,7 @@ const App = (theme) => {
             >
                 <ViewToggle />
                 <SideBar />
-                <Content>
+                <PostContent>
                     <HeaderPrimary>
                         Welcome to my personal website
                     </HeaderPrimary>
@@ -45,7 +45,7 @@ const App = (theme) => {
                         What I've been up to recently:
                     </HeaderPrimary>
                     <Posts />
-                </Content>
+                </PostContent>
             </Div>
         </ThemeProvider>
     );
@@ -66,7 +66,7 @@ const Div = styled(motion.div)`
     line-height: 2;
 `;
 
-const Content = styled(motion.div)`
+const PostContent = styled(motion.div)`
     display: block;
     padding: 10vh 10vw;
 `;

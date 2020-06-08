@@ -11,7 +11,7 @@ const SideBar = ({ theme }) => {
     const open = {
         background: theme.MAIN,
         border: theme.DEFAULT_BORDER,
-        clipPath: "circle(101vh at 2.5rem 2.5rem)",
+        clipPath: "circle(100vh at 2.5rem 2.5rem)",
         transition: {
             delay: 0.3,
             type: "spring",
@@ -52,7 +52,7 @@ const mapStateToProps = ({ theme }) => ({
 export default connect(mapStateToProps, null)(SideBar);
 
 const Nav = styled(motion.nav)`
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     bottom: 0;
